@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=3 uid="uid://c1m7705qrks4y"]
+
+[ext_resource type="Script" path="res://Scenes/character_body_2d.gd" id="1_ejbpq"]
+[ext_resource type="Texture2D" uid="uid://bnbtqv0s3n4e0" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_s0xo0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rpky"]
+atlas = ExtResource("1_s0xo0")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmrea"]
+atlas = ExtResource("1_s0xo0")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl45g"]
+atlas = ExtResource("1_s0xo0")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_og8cg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rpky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmrea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl45g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko0u5"]
+atlas = ExtResource("1_s0xo0")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdeyk"]
+atlas = ExtResource("1_s0xo0")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ivys"]
+atlas = ExtResource("1_s0xo0")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbgiq"]
+atlas = ExtResource("1_s0xo0")
+region = Rect2(960, 576, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ucejq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ko0u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdeyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ivys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbgiq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kbnll"]
+radius = 21.095
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0dlgi"]
+radius = 21.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="enemyFigure" type="CharacterBody2D" parent="."]
+script = ExtResource("1_ejbpq")
+
+[node name="enemyStatic" type="AnimatedSprite2D" parent="enemyFigure"]
+position = Vector2(4.5, -3)
+scale = Vector2(1.00521, 1.04167)
+sprite_frames = SubResource("SpriteFrames_og8cg")
+autoplay = "default"
+frame = 2
+frame_progress = 0.51125
+
+[node name="enemyAttack" type="AnimatedSprite2D" parent="enemyFigure"]
+sprite_frames = SubResource("SpriteFrames_ucejq")
+autoplay = "default"
+frame = 1
+frame_progress = 0.956439
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyFigure"]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_kbnll")
+
+[node name="Area2D" type="Area2D" parent="enemyFigure"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemyFigure/Area2D"]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_0dlgi")

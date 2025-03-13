@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=3 uid="uid://f35mwo2lleuq"]
+
+[ext_resource type="Texture2D" uid="uid://blkggcl21k5ir" path="res://Assets/UI/Banners/Carved_3Slides.png" id="1_gomig"]
+[ext_resource type="Texture2D" uid="uid://dpojmedi5drlh" path="res://Assets/UI/Banners/Banner_Horizontal.png" id="1_uvfyl"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_wx0u3"]
+[ext_resource type="Texture2D" uid="uid://rgpm77c84ppl" path="res://Assets/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="3_wvo4j"]
+[ext_resource type="Texture2D" uid="uid://cvbdngjr17i2t" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="4_jmqos"]
+[ext_resource type="Texture2D" uid="uid://rfm4at6mrxsq" path="res://Assets/UI/Ribbons/Ribbon_Blue_3Slides.png" id="5_h5v66"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rutx6"]
+texture = ExtResource("1_gomig")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wguoj"]
+texture = ExtResource("1_uvfyl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_36bdi"]
+texture = ExtResource("4_jmqos")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxv27"]
+texture = ExtResource("5_h5v66")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0u3y"]
+texture = ExtResource("3_wvo4j")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ij05"]
+texture = ExtResource("4_jmqos")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mu81"]
+texture = ExtResource("5_h5v66")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r2t4p"]
+texture = ExtResource("3_wvo4j")
+expand_margin_bottom = 24.0
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wx0u3")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -131.0
+offset_top = -81.0
+offset_right = 124.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rutx6")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -737.0
+offset_top = -469.0
+offset_right = 771.0
+offset_bottom = 355.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wguoj")
+
+[node name="startGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.509
+anchor_top = 0.517
+anchor_right = 0.509
+anchor_bottom = 0.517
+offset_left = -248.368
+offset_top = -234.016
+offset_right = 248.632
+offset_bottom = -110.016
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxTexture_36bdi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wxv27")
+theme_override_styles/normal = SubResource("StyleBoxTexture_f0u3y")
+text = "Start Game"
+
+[node name="exitGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.506
+anchor_top = 0.529
+anchor_right = 0.506
+anchor_bottom = 0.529
+offset_left = -252.912
+offset_top = -70.792
+offset_right = 252.088
+offset_bottom = 70.208
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxTexture_7ij05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4mu81")
+theme_override_styles/normal = SubResource("StyleBoxTexture_r2t4p")
+text = "Exit Game"
+
+[connection signal="pressed" from="startGame" to="." method="onStartGamePressed"]
+[connection signal="pressed" from="exitGame" to="." method="onExitGamePressed"]

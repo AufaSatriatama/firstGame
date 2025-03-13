@@ -1,0 +1,12 @@
+Daftar Fitur
+
+
+- Main Menu 
+
+- Pause Menu
+
+- Heal
+  Ada jamur yang bisa meng-heal darah. (tekan '/')
+
+- Healthbar
+

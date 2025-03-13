@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg02mt5kc5qm5"]
+
+[ext_resource type="Texture2D" uid="uid://bmxrg3brmkiqp" path="res://Assets/UI/Ribbons/Ribbon_Yellow_Connection_Up.png" id="1_yypy4"]
+[ext_resource type="Texture2D" uid="uid://cvbdngjr17i2t" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="2_m11qa"]
+[ext_resource type="Texture2D" uid="uid://rfm4at6mrxsq" path="res://Assets/UI/Ribbons/Ribbon_Blue_3Slides.png" id="3_yx8ky"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_guynx"]
+texture = ExtResource("1_yypy4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1dkb"]
+texture = ExtResource("2_m11qa")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlb35"]
+texture = ExtResource("3_yx8ky")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ys4l"]
+texture = ExtResource("2_m11qa")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4sud6"]
+texture = ExtResource("3_yx8ky")
+expand_margin_bottom = 24.0
+
+[node name="menang" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 366.0
+offset_top = -55.0
+offset_right = 925.0
+offset_bottom = 626.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_guynx")
+
+[node name="continueGame" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 109.0
+offset_right = 813.0
+offset_bottom = 209.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxTexture_l1dkb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vlb35")
+text = "Restart Game"
+
+[node name="exitGame" type="Button" parent="."]
+offset_left = 477.0
+offset_top = 311.0
+offset_right = 813.0
+offset_bottom = 421.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxTexture_6ys4l")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4sud6")
+text = "Exit Game"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 550.0
+offset_top = 56.0
+offset_right = 828.0
+offset_bottom = 96.0
+text = "The game is being paused"

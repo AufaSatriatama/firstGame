@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://nmya8tcvsujo"]
+
+[ext_resource type="Texture2D" uid="uid://b568aevnc3bwm" path="res://Assets/Factions/Goblins/Troops/Barrel/Blue/Barrel_Blue.png" id="1_0mg1g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_casqp"]
+atlas = ExtResource("1_0mg1g")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmmha"]
+atlas = ExtResource("1_0mg1g")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydjw3"]
+atlas = ExtResource("1_0mg1g")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8u2xa"]
+atlas = ExtResource("1_0mg1g")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsu0o"]
+atlas = ExtResource("1_0mg1g")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t58s3"]
+atlas = ExtResource("1_0mg1g")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e126k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_casqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmmha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydjw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8u2xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsu0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t58s3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy1" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e126k")
+autoplay = "default"
+frame = 3
+frame_progress = 0.490334

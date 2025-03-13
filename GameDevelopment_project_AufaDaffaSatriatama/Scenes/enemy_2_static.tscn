@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bctw4fcyl0y8m"]
+
+[ext_resource type="Texture2D" uid="uid://bnbtqv0s3n4e0" path="res://Assets/Factions/Goblins/Troops/Torch/Red/Torch_Red.png" id="1_0aob3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h7jr"]
+atlas = ExtResource("1_0aob3")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym6rl"]
+atlas = ExtResource("1_0aob3")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buqku"]
+atlas = ExtResource("1_0aob3")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhpqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h7jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym6rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_buqku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy2Static" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nhpqa")
+frame = 1
+frame_progress = 0.803992

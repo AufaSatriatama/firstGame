@@ -1,0 +1,111 @@
+[gd_scene load_steps=13 format=3 uid="uid://c2n2gg5p3mxn5"]
+
+[ext_resource type="Texture2D" uid="uid://bmxrg3brmkiqp" path="res://Assets/UI/Ribbons/Ribbon_Yellow_Connection_Up.png" id="1_3xr0y"]
+[ext_resource type="Script" path="res://Scenes/menang.gd" id="1_j1fcn"]
+[ext_resource type="Texture2D" uid="uid://cvbdngjr17i2t" path="res://Assets/UI/Ribbons/Ribbon_Red_3Slides.png" id="2_8hb6k"]
+[ext_resource type="Texture2D" uid="uid://rgpm77c84ppl" path="res://Assets/UI/Ribbons/Ribbon_Yellow_3Slides.png" id="3_piurm"]
+[ext_resource type="Texture2D" uid="uid://rfm4at6mrxsq" path="res://Assets/UI/Ribbons/Ribbon_Blue_3Slides.png" id="3_x8uxg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_guynx"]
+texture = ExtResource("1_3xr0y")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1dkb"]
+texture = ExtResource("2_8hb6k")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eyme2"]
+texture = ExtResource("3_piurm")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlb35"]
+texture = ExtResource("3_x8uxg")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ys4l"]
+texture = ExtResource("2_8hb6k")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bky7p"]
+texture = ExtResource("3_piurm")
+expand_margin_bottom = 24.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4sud6"]
+texture = ExtResource("3_x8uxg")
+expand_margin_bottom = 24.0
+
+[node name="menang" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -277.0
+offset_top = -83.0
+offset_right = 170.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j1fcn")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.524
+anchor_top = 0.456
+anchor_right = 0.524
+anchor_bottom = 0.456
+offset_left = -280.092
+offset_top = -340.456
+offset_right = 278.908
+offset_bottom = 340.544
+theme_override_styles/panel = SubResource("StyleBoxTexture_guynx")
+
+[node name="restartGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.526
+anchor_top = 0.429
+anchor_right = 0.526
+anchor_bottom = 0.429
+offset_left = -164.558
+offset_top = -159.554
+offset_right = 164.442
+offset_bottom = -59.554
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxTexture_l1dkb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_eyme2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vlb35")
+text = "Restart Game"
+
+[node name="exitGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.523
+anchor_top = 0.431
+anchor_right = 0.523
+anchor_bottom = 0.431
+offset_left = -167.859
+offset_top = 41.194
+offset_right = 168.141
+offset_bottom = 151.194
+theme_override_font_sizes/font_size = 24
+theme_override_styles/hover = SubResource("StyleBoxTexture_6ys4l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bky7p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4sud6")
+text = "Exit Game"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.527
+anchor_top = 0.44
+anchor_right = 0.527
+anchor_bottom = 0.44
+offset_left = -44.673
+offset_top = -210.68
+offset_right = 233.327
+offset_bottom = -170.68
+text = "You Won
+"
+
+[connection signal="pressed" from="restartGame" to="." method="onRestartGamePressed"]
+[connection signal="pressed" from="exitGame" to="." method="onExitGameMenangPressed"]
